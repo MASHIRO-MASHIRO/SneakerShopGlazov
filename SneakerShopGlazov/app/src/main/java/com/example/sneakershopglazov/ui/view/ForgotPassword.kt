@@ -49,6 +49,7 @@ fun ForgotPassword(modifier: Modifier = Modifier) {
         OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = email, onValueChange = {email = it})
         Spacer(modifier.height(20.dp))
         Button(onClick = {
+            viewModel.signUp(SignUpRequest(email, password), context, navController)
         }, shape = RoundedCornerShape(10.dp),
             modifier = Modifier.padding(4.dp, 0.dp).fillMaxWidth()) {
             Text("Отправить", fontSize = 16.sp)
