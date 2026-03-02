@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import com.example.sneakershopglazov.data.model.RegisterAccountRequest
 
 
 class RegisterAccountViewModelViewModel : ViewModel() {
