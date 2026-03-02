@@ -1,8 +1,5 @@
 package com.example.sneakershopglazov.ui.view
 
-import android.R
-import android.graphics.Paint
-import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,8 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,53 +28,37 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun SignIn(modifier: Modifier = Modifier) {
+fun ForgotPassword(modifier: Modifier = Modifier) {
 
     var email by remember { mutableStateOf(value = "") }
-    var password by remember { mutableStateOf(value = "") }
 
     val context = LocalContext.current
     Column(modifier = Modifier.fillMaxSize().padding(20.dp), verticalArrangement = Arrangement.Center) {
         Spacer(modifier = Modifier.weight(1f))
         Row(modifier = Modifier.fillMaxWidth()){
-            Spacer(modifier = Modifier.width(110.dp))
-            Text(modifier = Modifier.fillMaxWidth(), text = "Привет!", fontSize = 32.sp, fontWeight = FontWeight.Bold)
+            Spacer(modifier = Modifier.width(65.dp))
+            Text(modifier = Modifier.fillMaxWidth(), text = "Забыл Пароль", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         }
         Spacer(modifier = Modifier.height(10.dp))
         Row(modifier = Modifier.fillMaxWidth()){
-            Spacer(modifier = Modifier.width(80.dp))
-            Text(modifier = Modifier.fillMaxWidth(), text = "Заполните свои данные", color = Color.Gray, fontSize = 16.sp)
+            Spacer(modifier = Modifier.width(20.dp))
+            Text(modifier = Modifier.fillMaxWidth(), text = "Введите свою учетную запись для сброса", color = Color.Gray, fontSize = 16.sp)
         }
         Spacer(modifier = Modifier.height(60.dp))
         Text(text = "Email", color = Color.Gray, fontSize = 16.sp)
         OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = email, onValueChange = {email = it})
-        Spacer(modifier.height(24.dp))
-        Text(text = "Пароль", color = Color.Gray, fontSize = 16.sp)
-        OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = password, onValueChange = {password = it})
-        Spacer(modifier.height(10.dp))
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Spacer(modifier = Modifier.width(260.dp))
-            Text(text = "Восстановить", color = Color.Gray)
-            Spacer(modifier = Modifier.weight(1f))
-        }
-        Spacer(modifier.height(10.dp))
+        Spacer(modifier.height(20.dp))
         Button(onClick = {
         }, shape = RoundedCornerShape(10.dp),
             modifier = Modifier.padding(4.dp, 0.dp).fillMaxWidth()) {
-            Text("Войти", fontSize = 16.sp)
+            Text("Отправить", fontSize = 16.sp)
         }
-        Spacer(modifier.height(200.dp))
-        Row(modifier = Modifier.fillMaxWidth()) {
-            Spacer(modifier = Modifier.weight(1f))
-            Text(text = "Вы впервые? Создать", color = Color.Gray, fontSize = 14.sp)
-            Spacer(modifier = Modifier.weight(1f))
-        }
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier.height(400.dp))
     }
 }
 
 @Preview
 @Composable
-private fun SignInPreview() {
-    SignIn()
+private fun ForgotPasswordPreview() {
+    ForgotPassword()
 }
