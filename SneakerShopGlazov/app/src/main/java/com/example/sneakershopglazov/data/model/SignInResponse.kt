@@ -1,4 +1,4 @@
-package com.example.upsidorkin.data.model
+package com.example.sneakershopglazov.data.model
 
 data class SignInResponse(
     val access_token: String,

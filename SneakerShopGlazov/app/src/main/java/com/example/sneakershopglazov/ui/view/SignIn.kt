@@ -28,10 +28,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.upsidorkin.R
-import com.example.upsidorkin.ui.theme.UpSidorkinTheme
-import com.example.upsidorkin.ui.viewModel.SignInViewModel
-import com.example.upsidorkin.data.model.SignInRequest
+import com.example.sneakershopglazov.R
+import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
+import com.example.sneakershopglazov.ui.viewModel.SignInViewModel
 
 @Composable
 fun LoginScreen(
@@ -161,13 +160,8 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Кнопка Войти
             Button(
                 onClick = {
-                    viewModel.signIn(
-                        SignInRequest(email.trim(), password.trim()),
-                        navController = navController
-                    )
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -258,7 +252,7 @@ private fun StyledTextField(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LoginScreenPreview() {
-    UpSidorkinTheme {
+    UpGlazovTheme {
         val navController = rememberNavController()
         LoginScreen(navController = navController)
     }

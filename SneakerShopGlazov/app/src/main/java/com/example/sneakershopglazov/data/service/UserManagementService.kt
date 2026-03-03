@@ -1,13 +1,11 @@
 package com.example.sneakershopglazov.data.service
 
-import com.example.upsidorkin.data.model.*
+import com.example.sneakershopglazov.data.model.*
 import retrofit2.Response
 import retrofit2.http.*
 
 const val API_KEY =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1cmZmendpa2N3dGNwaWt2a2t1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNjA3NTIsImV4cCI6MjA3NDgzNjc1Mn0.nfUxFx21J5MYGjNJdujY_2wU_BFsqeUQr6-qfTBKzAI"
-
-// -------- DTO --------
 
 data class ProfileDto(
     val id: String?,
