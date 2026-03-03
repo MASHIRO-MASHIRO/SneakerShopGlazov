@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.example.sneakershopglazov.data.RetrofitInstance
-import com.example.upsidorkin.data.model.SignUpRequest
+import com.example.sneakershopglazov.data.model.SignUpRequest
 import kotlinx.coroutines.launch
 
 class SignUpViewModel : ViewModel() {
