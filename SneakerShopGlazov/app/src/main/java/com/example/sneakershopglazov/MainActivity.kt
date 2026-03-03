@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.sneakershopglazov.data.UserSession
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 import com.example.sneakershopglazov.ui.view.*
 
@@ -72,6 +73,21 @@ class MainActivity : ComponentActivity() {
                         ) { backStackEntry ->
                             val email = backStackEntry.arguments?.getString("email") ?: ""
                             NewPasswordScreen(navController = navController, email = email)
+                        }
+
+                        composable("profile") {
+                            val userId = UserSession.userId
+                            val accessToken = UserSession.accessToken
+
+                            if (userId != null && accessToken != null) {
+                                Profile(
+                                    navController = navController,
+                                    userId = userId,
+                                    accessToken = accessToken
+                                )
+                            } else {
+                                LoginScreen(navController = navController)
+                            }
                         }
                     }
                 }
