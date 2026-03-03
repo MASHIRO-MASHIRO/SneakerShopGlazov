@@ -31,6 +31,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.sneakershopglazov.R
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 import com.example.sneakershopglazov.ui.viewModel.SignInViewModel
+import com.example.sneakershopglazov.data.model.SignInRequest
 
 @Composable
 fun LoginScreen(
@@ -159,6 +160,10 @@ fun LoginScreen(
 
             Button(
                 onClick = {
+                    viewModel.signIn(
+                        SignInRequest(email.trim(), password.trim()),
+                        navController = navController
+                    )
                 },
                 modifier = Modifier
                     .fillMaxWidth()
