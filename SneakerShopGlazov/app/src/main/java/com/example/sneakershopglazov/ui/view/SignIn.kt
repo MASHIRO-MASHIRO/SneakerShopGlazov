@@ -55,7 +55,6 @@ fun LoginScreen(
         ) {
             Spacer(modifier = Modifier.height(50.dp))
 
-            // Кнопка "Назад"
             Box(
                 modifier = Modifier
                     .size(32.dp)
@@ -71,7 +70,7 @@ fun LoginScreen(
                 )
             }
 
-            Spacer(modifier = Modifier.height(30.dp)) // Такой же отступ как в Register
+            Spacer(modifier = Modifier.height(30.dp))
 
             Text(
                 text = "Привет!",
@@ -92,9 +91,8 @@ fun LoginScreen(
                 modifier = Modifier.fillMaxWidth()
             )
 
-            Spacer(modifier = Modifier.height(40.dp)) // Был 60, стал 40 для симметрии с Register
+            Spacer(modifier = Modifier.height(40.dp))
 
-            // Email
             Text(
                 text = "Email",
                 fontSize = 13.sp,
@@ -112,7 +110,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Пароль
             Text(
                 text = "Пароль",
                 fontSize = 13.sp,
@@ -179,10 +176,8 @@ fun LoginScreen(
                 )
             }
 
-            // Заполнитель пространства
             Spacer(modifier = Modifier.weight(1f))
 
-            // Низ: "Вы впервые? Создать"
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -209,7 +204,6 @@ fun LoginScreen(
     }
 }
 
-// Переиспользуемый компонент для ввода текста (копия для автономности файла)
 @Composable
 private fun StyledTextField(
     value: String,

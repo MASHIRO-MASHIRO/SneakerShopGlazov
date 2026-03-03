@@ -46,9 +46,6 @@ fun RegisterAccount(
     var password by remember { mutableStateOf("") }
     var showPassword by remember { mutableStateOf(false) }
     var isTermsAccepted by remember { mutableStateOf(false) }
-
-    // Используем .verticalScroll(rememberScrollState()) в модификаторе Column,
-    // но с fillMaxHeight() для правильной работы веса (weight)
     val scrollState = rememberScrollState()
     val context = LocalContext.current
 
@@ -67,8 +64,6 @@ fun RegisterAccount(
         modifier = modifier.fillMaxSize(),
         color = Color.White
     ) {
-        // Чтобы weight(1f) работал внутри скролла, используем fillMaxSize()
-        // и verticalScroll().
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -77,7 +72,6 @@ fun RegisterAccount(
         ) {
             Spacer(modifier = Modifier.height(50.dp))
 
-            // Кнопка "Назад"
             Box(
                 modifier = Modifier
                     .size(32.dp)
@@ -135,7 +129,6 @@ fun RegisterAccount(
 
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Кнопка
             Button(
                 onClick = {
                     viewModel.signUp(email.trim(), password.trim(), navController)
@@ -172,7 +165,6 @@ fun RegisterAccount(
     }
 }
 
-// ОСТАВЬТЕ StyledTextField и ShieldCheckbox ТАКИМИ ЖЕ, КАК БЫЛИ
 @Composable
 private fun StyledTextField(
     value: String,

@@ -36,17 +36,14 @@ fun RegisterButton(
         onClick = {
             if (validateInputs(name, email, password, isTermsAccepted)) {
 
-                // Сохранение почты для OTP
                 val prefs = context.getSharedPreferences(
                     "my_app_preferences",
                     Context.MODE_PRIVATE
                 )
                 prefs.edit().putString("userEmail", email.trim()).apply()
 
-                // Вызов регистрации (сервер отправляет код на почту)
                 viewModel.signUp(email.trim(), password.trim(), navController)
 
-                // Переход на экран OTP-проверки
                 navController.navigate("otp")
             } else {
                 Toast.makeText(

@@ -19,6 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 import com.example.sneakershopglazov.ui.view.*
+import com.example.upsidorkin.ui.view.LoginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +41,11 @@ class MainActivity : ComponentActivity() {
                         composable("onboard1") { Onboard1Screen(navController) }
                         composable("onboard2") { Onboard2Screen(navController) }
                         composable("onboard3") { Onboard3Screen(navController) }
+
+                        composable("login") { LoginScreen(navController = navController) }
+                        composable("register") { RegisterAccount(navController = navController) }
+
+                        composable("forgot_password") { ForgotPassword(navController) }
                     }
                 }
             }
