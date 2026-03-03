@@ -1,4 +1,4 @@
-package com.example.upsidorkin.ui.view
+package com.example.sneakershopglazov.ui.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

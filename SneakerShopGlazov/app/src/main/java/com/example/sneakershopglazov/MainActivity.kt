@@ -19,7 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 import com.example.sneakershopglazov.ui.view.*
-import com.example.upsidorkin.ui.view.LoginScreen
+import com.example.sneakershopglazov.ui.view.LoginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +46,32 @@ class MainActivity : ComponentActivity() {
                         composable("register") { RegisterAccount(navController = navController) }
 
                         composable("forgot_password") { ForgotPassword(navController) }
+
+                        composable(
+                            route = "verifyOTP/{email}/{type}",
+                            arguments = listOf(
+                                navArgument("email") { type = NavType.StringType },
+                                navArgument("type") { type = NavType.StringType }
+                            )
+                        ) { backStackEntry ->
+                            val email = backStackEntry.arguments?.getString("email") ?: ""
+                            val type = backStackEntry.arguments?.getString("type") ?: "signup"
+                            VerifyOTP(
+                                navController = navController,
+                                email = email,
+                                otpType = type
+                            )
+                        }
+
+                        composable(
+                            route = "new_password/{email}",
+                            arguments = listOf(
+                                navArgument("email") { type = NavType.StringType }
+                            )
+                        ) { backStackEntry ->
+                            val email = backStackEntry.arguments?.getString("email") ?: ""
+                            NewPasswordScreen(navController = navController, email = email)
+                        }
                     }
                 }
             }
