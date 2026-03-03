@@ -17,24 +17,28 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
+import com.example.sneakershopglazov.ui.view.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {}
+        setContent {
+            UpGlazovTheme {
+                val navController = rememberNavController()
+
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = "onboard1",
+                        modifier = Modifier.padding(innerPadding)
+                    ) {
+                        composable("onboard1") { Onboard1Screen(navController) }
+                        composable("onboard2") { Onboard2Screen(navController) }
+                        composable("onboard3") { Onboard3Screen(navController) }
+                    }
+                }
+            }
+        }
     }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
 }
