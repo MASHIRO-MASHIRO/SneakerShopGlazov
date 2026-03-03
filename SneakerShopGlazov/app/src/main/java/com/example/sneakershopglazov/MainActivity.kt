@@ -19,7 +19,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 import com.example.sneakershopglazov.ui.view.*
-import com.example.sneakershopglazov.ui.view.LoginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +45,8 @@ class MainActivity : ComponentActivity() {
                         composable("register") { RegisterAccount(navController = navController) }
 
                         composable("forgot_password") { ForgotPassword(navController) }
+
+                        composable("home") { Home(navController = navController) }
 
                         composable(
                             route = "verifyOTP/{email}/{type}",

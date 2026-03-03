@@ -21,10 +21,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.sneakershopglazov.R
+import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
 
 data class Product(
     val id: Int,
@@ -34,7 +37,7 @@ data class Product(
 )
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun Home(navController: NavHostController) {
     val scrollState = rememberScrollState()
 
     val categories = listOf("Все", "Outdoor", "Tennis")
@@ -366,7 +369,7 @@ fun BottomBar(navController: NavHostController, currentRoute: String) {
 
 
             Icon(
-                painter = painterResource(id = R.drawable.heart),
+                painter = painterResource(id = R.drawable.favorite_bord),
                 contentDescription = "Favorites",
                 tint = if (currentRoute == "favorite") activeColor else inactiveColor,
                 modifier = Modifier.clickable {

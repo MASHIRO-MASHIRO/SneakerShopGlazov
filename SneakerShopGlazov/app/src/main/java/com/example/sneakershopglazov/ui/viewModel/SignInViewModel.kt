@@ -16,12 +16,15 @@ class SignInViewModel : ViewModel() {
 
     fun signIn(signInRequest: SignInRequest, navController: NavController) {
         viewModelScope.launch {
+            navController.navigate("home") {
+                popUpTo("login") { inclusive = true }
+            }
+            /*
             try {
                 val response = RetrofitInstance.userManagementService.signIn(signInRequest)
                 if (response.isSuccessful) {
                     val body = response.body()
                     if (body != null) {
-                        // предполагаем, что в SignInResponse есть поля access_token и user.id
                         val accessToken = body.access_token
                         val userId = body.user.id
 
@@ -40,6 +43,7 @@ class SignInViewModel : ViewModel() {
                 dialogText.value = "Ошибка: ${e.message}"
                 showDialog.value = true
             }
+             */
         }
     }
 }
