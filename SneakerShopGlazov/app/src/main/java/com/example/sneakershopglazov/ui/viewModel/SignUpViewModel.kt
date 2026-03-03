@@ -1,10 +1,10 @@
-package com.example.upsidorkin.ui.viewModel
+package com.example.sneakershopglazov.ui.viewModel
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.example.upsidorkin.data.RetrofitInstance
+import com.example.sneakershopglazov.data.RetrofitInstance
 import com.example.upsidorkin.data.model.SignUpRequest
 import kotlinx.coroutines.launch
 

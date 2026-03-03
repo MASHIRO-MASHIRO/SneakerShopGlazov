@@ -1,4 +1,4 @@
-package com.example.upsidorkin.ui.view
+package com.example.sneakershopglazov.ui.view
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -31,9 +31,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.upsidorkin.R
-import com.example.upsidorkin.ui.theme.UpSidorkinTheme
-import com.example.upsidorkin.ui.viewModel.SignUpViewModel
+import com.example.sneakershopglazov.R
+import com.example.sneakershopglazov.ui.theme.UpGlazovTheme
+import com.example.sneakershopglazov.ui.viewModel.SignUpViewModel
 
 @Composable
 fun RegisterAccount(
@@ -212,15 +212,15 @@ fun ShieldCheckbox(checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
             .clickable { onCheckedChange(!checked) },
         contentAlignment = Alignment.Center
     ) {
-        Icon(painter = painterResource(id = R.drawable.shield), contentDescription = null, tint = Color.Black, modifier = Modifier.size(14.dp))
+        Icon(painter = painterResource(id = R.drawable.chield), contentDescription = null, tint = Color.Black, modifier = Modifier.size(14.dp))
     }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RegisterScreenPreview() {
-    UpSidorkinTheme {
+    UpGlazovTheme {
         val navController = rememberNavController()
-        RegisterScreen(navController = navController)
+        RegisterAccount(navController = navController)
     }
 }

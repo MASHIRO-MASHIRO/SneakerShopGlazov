@@ -1,6 +1,6 @@
-package com.example.upsidorkin.data
+package com.example.sneakershopglazov.data
 
-import com.example.upsidorkin.data.service.UserManagementService
+import com.example.sneakershopglazov.data.service.UserManagementService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
