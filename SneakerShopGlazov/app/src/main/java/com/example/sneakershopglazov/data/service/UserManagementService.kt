@@ -34,8 +34,6 @@ data class ProductDto(
 
 interface UserManagementService {
 
-    // ---------- AUTH ----------
-
     @Headers("apikey: $API_KEY", "Content-Type: " +
             "application/json")
     @POST("auth/v1/signup")
@@ -57,7 +55,6 @@ interface UserManagementService {
     @POST("change-password")
     suspend fun changePassword(@Body body: ChangePasswordRequest): Response<Any>
 
-    // ---------- PROFILES ----------
 
     @Headers("apikey: $API_KEY")
     @GET("rest/v1/profiles")
@@ -75,8 +72,6 @@ interface UserManagementService {
         @Body body: Map<String, Any?>
     ): Response<Unit>
 
-    // ---------- PRODUCTS ----------
-
     @Headers("apikey: $API_KEY")
     @GET("rest/v1/products")
     suspend fun getProducts(
@@ -84,13 +79,11 @@ interface UserManagementService {
         @Query("select") select: String = "*"
     ): List<ProductDto>
 
-    // ---------- FAVOURITE ----------
-
     @Headers("apikey: $API_KEY")
     @GET("rest/v1/favourite")
     suspend fun getFavourites(
         @Header("Authorization") authHeader: String,
-        @Query("user_id") userIdFilter: String, // "eq.<uuid>"
+        @Query("user_id") userIdFilter: String,
         @Query("select") select: String = "id,product_id,user_id"
     ): List<FavouriteDto>
 
@@ -105,7 +98,7 @@ interface UserManagementService {
     @DELETE("rest/v1/favourite")
     suspend fun deleteFavourite(
         @Header("Authorization") authHeader: String,
-        @Query("user_id") userIdFilter: String, // "eq.<uuid>"
-        @Query("product_id") productIdFilter: String // "eq.<uuid>"
+        @Query("user_id") userIdFilter: String,
+        @Query("product_id") productIdFilter: String
     ): Response<Unit>
 }
