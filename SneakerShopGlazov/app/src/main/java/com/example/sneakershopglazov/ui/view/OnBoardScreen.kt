@@ -172,7 +172,7 @@ private fun OnboardBase(
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth(1.25f)
-                        .height(340.dp)
+                        .height(300.dp)
                         .offset(y = (-40).dp)
                 )
 

@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FavoriteScreen(navController: NavHostController) {
+fun Favorite(navController: NavHostController) {
     val token = UserSession.accessToken
     val userId = UserSession.userId
     val scope = rememberCoroutineScope()

@@ -16,12 +16,10 @@ class SignInViewModel : ViewModel() {
 
     fun signIn(signInRequest: SignInRequest, navController: NavController) {
         viewModelScope.launch {
-            navController.navigate("home") {
-                popUpTo("login") { inclusive = true }
-            }
-            /*
             try {
                 val response = RetrofitInstance.userManagementService.signIn(signInRequest)
+                dialogText.value = "Должны быть заполнены все поля"
+                showDialog.value = true
                 if (response.isSuccessful) {
                     val body = response.body()
                     if (body != null) {
@@ -36,14 +34,16 @@ class SignInViewModel : ViewModel() {
                         popUpTo("login") { inclusive = true }
                     }
                 } else {
-                    dialogText.value = "Неверный логин или пароль"
+                    if(signInRequest.email.isEmpty() && signInRequest.password.isEmpty())
+                        dialogText.value = "Введены некорректные данные пользователя! Попробуйте ещё разочек"
+                    else
+                        dialogText.value = "Должны быть заполнены все поля"
                     showDialog.value = true
                 }
             } catch (e: Exception) {
                 dialogText.value = "Ошибка: ${e.message}"
                 showDialog.value = true
             }
-             */
         }
     }
 }
