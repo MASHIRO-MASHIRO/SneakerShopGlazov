@@ -19,7 +19,6 @@ class ForgotPasswordViewModel : ViewModel() {
                     .recoverPassword(mapOf("email" to email))
 
                 if (response.isSuccessful) {
-                    // Письмо отправлено – показываем диалог "Проверьте email"
                     showDialog.value = true
                 } else {
                     errorMessage.value = "Ошибка: ${response.code()} ${response.message()}"
