@@ -22,7 +22,7 @@ class NewPasswordViewModel : ViewModel() {
                 val body = ChangePasswordRequest(email, newPassword)
                 val response = RetrofitInstance.userManagementService.changePassword(body)
 
-                if (true) {
+                if (response.isSuccessful) {
                     navController.navigate("login") {
                         popUpTo("login") { inclusive = true }
                     }
