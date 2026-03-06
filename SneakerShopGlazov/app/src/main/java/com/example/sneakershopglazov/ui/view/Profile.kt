@@ -96,7 +96,7 @@ fun Profile(
                 errorText = "Профиль не найден"
             }
         } catch (e: Exception) {
-            errorText = "Не удалось загрузить профиль: ${e.localizedMessage}"
+            errorText = "Возникла ошибка при загрузке профиля"
         } finally {
             isLoading = false
         }
@@ -294,7 +294,7 @@ fun BarcodeCard() {
         ) {
             Text(
                 text = "Открыть",
-                fontSize = 12.sp,
+                fontSize = 11.sp,
                 color = Color.Gray,
                 modifier = Modifier.rotate(-90f),
                 maxLines = 1
